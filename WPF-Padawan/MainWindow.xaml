@@ -7,16 +7,19 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <DataGrid HorizontalAlignment="Left" Height="120" Margin="100,280,0,0" VerticalAlignment="Top" Width="600"/>
+        <DataGrid Name="WindowDataGrid" HorizontalAlignment="Left" Height="120" Margin="100,280,0,0" VerticalAlignment="Top" Width="600"/>
+        
         <Label Content="Nome" HorizontalAlignment="Left" Height="30" Margin="95,29,0,0" VerticalAlignment="Top" Width="600"/>
         <Label Content="Endereço" HorizontalAlignment="Left" Height="30" Margin="95,77,0,0" VerticalAlignment="Top" Width="600"/>
         <Label Content="Telefone" HorizontalAlignment="Left" Height="30" Margin="95,129,0,0" VerticalAlignment="Top" Width="600"/>
-        <Button Content="Inserir" HorizontalAlignment="Left" Margin="100,191,0,0" VerticalAlignment="Top" Width="74" Click="btnInserir_Click"/>
-        <Button Content="Atualizar" HorizontalAlignment="Left" Margin="200,191,0,0" VerticalAlignment="Top" Width="74" Click="btnInserir_Click"/>
-        <Button Content="Deletar" HorizontalAlignment="Left" Margin="300,191,0,0" VerticalAlignment="Top" Width="74" Click="btnInserir_Click"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="100,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="600"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="100,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="600"/>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="100,150,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="600"/>
+        
+        <Button Content="Inserir" HorizontalAlignment="Left" Margin="100,191,0,0" VerticalAlignment="Top" Width="74" Click="Btn_Insert"/>
+        <Button Content="Atualizar" HorizontalAlignment="Left" Margin="200,191,0,0" VerticalAlignment="Top" Width="74"/>
+        <Button Content="Deletar" HorizontalAlignment="Left" Margin="300,191,0,0" VerticalAlignment="Top" Width="74"/>
+        
+        <TextBox Name="txtName" HorizontalAlignment="Left" Height="20" Margin="100,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="600"/>
+        <TextBox Name="txtAdress" HorizontalAlignment="Left" Height="20" Margin="100,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="600"/>
+        <TextBox Name="txtPhoneNumber" HorizontalAlignment="Left" Height="20" Margin="100,150,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="600"/>
 
     </Grid>
 </Window>

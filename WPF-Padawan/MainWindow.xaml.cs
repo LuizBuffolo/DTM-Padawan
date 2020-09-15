@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using LiteDB;
+using WPF_Padawan.Models;
 
 namespace WPF_Padawan
 {
@@ -23,6 +25,24 @@ namespace WPF_Padawan
         public MainWindow()
         {
             InitializeComponent();
+            UpdateGrid();
         }
+        
+        private void UpdateGrid()
+        {
+            using (LiteDatabase db = new LiteDatabase("Filename=UserDB.db"))
+            {
+                List<User> users = db.GetCollection<User>().FindAll().ToList();
+
+                WindowDataGrid.ItemsSource = users;
+            }
+        }
+
+        private void Btn_Insert(object sender, RoutedEventArgs e)
+        {
+            DataBase.DataBase.AddUser(txtName.Text, txtAdress.Text, txtPhoneNumber.Text);
+            UpdateGrid();
+        }
+        
     }
 }
