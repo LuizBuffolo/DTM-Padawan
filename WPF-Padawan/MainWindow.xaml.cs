@@ -38,11 +38,42 @@ namespace WPF_Padawan
             }
         }
 
+        private void UpdateTextbox(object sender, RoutedEventArgs e)
+        {
+            if (txtName.Text == "")
+            {
+                txtAdress.Text = "";
+                txtPhoneNumber.Text = "";
+            }
+
+            using (LiteDatabase db = new LiteDatabase("Filename=UserDB.db"))
+            {
+                var user = db.GetCollection<User>().FindOne(x => x.Name == txtName.Text);
+
+                if (user != null) {
+                    txtAdress.Text = user.Adress;
+                    txtPhoneNumber.Text = user.PhoneNumber;
+
+                    Console.WriteLine("Habilitar Atualização");
+                    Console.WriteLine("Habilitar Exclusão");
+                }
+                else {
+                    Console.WriteLine("Habilitar Inserção");
+                }
+            }
+        }
+
         private void Btn_Insert(object sender, RoutedEventArgs e)
         {
             DataBase.DataBase.AddUser(txtName.Text, txtAdress.Text, txtPhoneNumber.Text);
             UpdateGrid();
         }
-        
+
+        private void Btn_Update(object sender, RoutedEventArgs e)
+        {
+            DataBase.DataBase.UpdateUser(txtName.Text, txtAdress.Text, txtPhoneNumber.Text);
+            UpdateGrid();
+        }
+
     }
 }

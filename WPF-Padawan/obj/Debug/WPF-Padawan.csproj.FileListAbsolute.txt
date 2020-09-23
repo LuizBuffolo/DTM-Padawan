@@ -16,3 +16,20 @@ C:\Users\saolbuff\source\repos\WPF-Padawan\WPF-Padawan\obj\Debug\WPF-Padawan.csp
 C:\Users\saolbuff\source\repos\WPF-Padawan\WPF-Padawan\obj\Debug\WPF-Padawan.csproj.CopyComplete
 C:\Users\saolbuff\source\repos\WPF-Padawan\WPF-Padawan\obj\Debug\WPF-Padawan.exe
 C:\Users\saolbuff\source\repos\WPF-Padawan\WPF-Padawan\obj\Debug\WPF-Padawan.pdb
+C:\Projects\WPF Padawan\DTM-Padawan\WPF-Padawan\bin\Debug\WPF-Padawan.exe.config
+C:\Projects\WPF Padawan\DTM-Padawan\WPF-Padawan\bin\Debug\WPF-Padawan.exe
+C:\Projects\WPF Padawan\DTM-Padawan\WPF-Padawan\bin\Debug\WPF-Padawan.pdb
+C:\Projects\WPF Padawan\DTM-Padawan\WPF-Padawan\bin\Debug\LiteDB.dll
+C:\Projects\WPF Padawan\DTM-Padawan\WPF-Padawan\bin\Debug\LiteDB.xml
+C:\Projects\WPF Padawan\DTM-Padawan\WPF-Padawan\obj\Debug\MainWindow.g.cs
+C:\Projects\WPF Padawan\DTM-Padawan\WPF-Padawan\obj\Debug\App.g.cs
+C:\Projects\WPF Padawan\DTM-Padawan\WPF-Padawan\obj\Debug\WPF-Padawan_MarkupCompile.cache
+C:\Projects\WPF Padawan\DTM-Padawan\WPF-Padawan\obj\Debug\WPF-Padawan_MarkupCompile.lref
+C:\Projects\WPF Padawan\DTM-Padawan\WPF-Padawan\obj\Debug\MainWindow.baml
+C:\Projects\WPF Padawan\DTM-Padawan\WPF-Padawan\obj\Debug\WPF-Padawan.g.resources
+C:\Projects\WPF Padawan\DTM-Padawan\WPF-Padawan\obj\Debug\WPF_Padawan.Properties.Resources.resources
+C:\Projects\WPF Padawan\DTM-Padawan\WPF-Padawan\obj\Debug\WPF-Padawan.csproj.GenerateResource.cache
+C:\Projects\WPF Padawan\DTM-Padawan\WPF-Padawan\obj\Debug\WPF-Padawan.csproj.CoreCompileInputs.cache
+C:\Projects\WPF Padawan\DTM-Padawan\WPF-Padawan\obj\Debug\WPF-Padawan.csproj.CopyComplete
+C:\Projects\WPF Padawan\DTM-Padawan\WPF-Padawan\obj\Debug\WPF-Padawan.exe
+C:\Projects\WPF Padawan\DTM-Padawan\WPF-Padawan\obj\Debug\WPF-Padawan.pdb

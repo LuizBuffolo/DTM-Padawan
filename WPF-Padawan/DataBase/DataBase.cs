@@ -29,5 +29,23 @@ namespace WPF_Padawan.DataBase
 
             return true;
         }
+        public static bool UpdateUser(string Name, string Adress, string PhoneNumber)
+        {
+            if (Name.Equals(null) || Adress.Equals(null) || PhoneNumber.Equals(null))
+                return false;
+
+            using (LiteDatabase db = new LiteDatabase("Filename=UserDB.db"))
+            {
+                var user = db.GetCollection<User>().FindOne(x => x.Name == Name);
+                user.Name = Name;
+                user.Adress = Adress;
+                user.PhoneNumber = PhoneNumber;
+
+                db.GetCollection<User>().Update(user);
+
+            }
+
+            return true;
+        }
     }
 }
