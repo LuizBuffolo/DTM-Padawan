@@ -21,8 +21,9 @@ namespace WPF_Padawan.Models
         [BsonField]
         public string PhoneNumber { get; set; }
 
-        public User(string Name, string Adress, string PhoneNumber)
+        public User(int Id, string Name, string Adress, string PhoneNumber)
         {
+            this.Id = Id;
             this.Name = Name;
             this.Adress = Adress;
             this.PhoneNumber = PhoneNumber;

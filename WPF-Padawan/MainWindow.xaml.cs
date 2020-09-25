@@ -38,34 +38,65 @@ namespace WPF_Padawan
             }
         }
 
+        private void ClearWindow()
+        {
+            txtName.Text = "";
+            btnInsert.IsEnabled = false;
+            btnUpdate.IsEnabled = false;
+            btnDelete.IsEnabled = false;
+        }
+
         private void UpdateTextbox(object sender, RoutedEventArgs e)
         {
             if (txtName.Text == "")
             {
                 txtAdress.Text = "";
                 txtPhoneNumber.Text = "";
+                btnInsert.IsEnabled = false;
+                btnUpdate.IsEnabled = false;
+                btnDelete.IsEnabled = false;
             }
 
-            using (LiteDatabase db = new LiteDatabase("Filename=UserDB.db"))
+            else
             {
-                var user = db.GetCollection<User>().FindOne(x => x.Name == txtName.Text);
+                using (LiteDatabase db = new LiteDatabase("Filename=UserDB.db"))
+                {
+                    var user = db.GetCollection<User>().FindOne(x => x.Name == txtName.Text);
 
-                if (user != null) {
-                    txtAdress.Text = user.Adress;
-                    txtPhoneNumber.Text = user.PhoneNumber;
+                    if (user != null)
+                    {
+                        txtAdress.Text = user.Adress;
+                        txtPhoneNumber.Text = user.PhoneNumber;
 
-                    Console.WriteLine("Habilitar Atualização");
-                    Console.WriteLine("Habilitar Exclusão");
-                }
-                else {
-                    Console.WriteLine("Habilitar Inserção");
+                        //Se  há usuário criado no banco, bloqueia botão Insert
+                        btnInsert.IsEnabled = false;
+                        btnUpdate.IsEnabled = true;
+                        btnDelete.IsEnabled = true;
+                    }
+                    else
+                    {
+                        //Se não há usuário criado no banco, bloqueia botões Update e Delete
+                        btnInsert.IsEnabled = true;
+                        btnUpdate.IsEnabled = false;
+                        btnDelete.IsEnabled = false;
+                    }
                 }
             }
         }
 
         private void Btn_Insert(object sender, RoutedEventArgs e)
         {
-            DataBase.DataBase.AddUser(txtName.Text, txtAdress.Text, txtPhoneNumber.Text);
+            if (DataBase.DataBase.AddUser(txtName.Text, txtAdress.Text, txtPhoneNumber.Text) == false)
+            {
+               if (txtPhoneNumber.Text == "")
+                {
+                    namePopUp.IsOpen = true;
+                }
+            }
+            else
+            {
+                ClearWindow();
+            }
             UpdateGrid();
         }
 
@@ -75,5 +106,15 @@ namespace WPF_Padawan
             UpdateGrid();
         }
 
+        private void Btn_Delete(object sender, RoutedEventArgs e)
+        {
+            DataBase.DataBase.DeleteUser(txtName.Text);
+            UpdateGrid();
+        }
+
+        private void Btn_OkPopUp(object sender, RoutedEventArgs e)
+        {
+            namePopUp.IsOpen = false;
+        }
     }
 }
