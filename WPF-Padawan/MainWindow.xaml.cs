@@ -86,24 +86,42 @@ namespace WPF_Padawan
 
         private void Btn_Insert(object sender, RoutedEventArgs e)
         {
-            if (DataBase.DataBase.AddUser(txtName.Text, txtAdress.Text, txtPhoneNumber.Text) == false)
+            if (txtAdress.Text == "" || txtPhoneNumber.Text == "")
             {
-               if (txtPhoneNumber.Text == "")
-                {
-                    namePopUp.IsOpen = true;
-                }
+                namePopUp.IsOpen = true;
             }
             else
             {
-                ClearWindow();
+                if (!int.TryParse(txtPhoneNumber.Text, out _)){
+                    numericPopUp.IsOpen = true;
+                }
+                else { 
+                    DataBase.DataBase.AddUser(txtName.Text, txtAdress.Text, txtPhoneNumber.Text);
+                    UpdateGrid();
+                    ClearWindow();
+                }
             }
-            UpdateGrid();
         }
 
         private void Btn_Update(object sender, RoutedEventArgs e)
         {
-            DataBase.DataBase.UpdateUser(txtName.Text, txtAdress.Text, txtPhoneNumber.Text);
-            UpdateGrid();
+            if (txtAdress.Text == "" || txtPhoneNumber.Text == "")
+            {
+                namePopUp.IsOpen = true;
+            }
+            else
+            {
+                if (!int.TryParse(txtPhoneNumber.Text, out _))
+                {
+                    numericPopUp.IsOpen = true;
+                }
+                else
+                {
+                    DataBase.DataBase.UpdateUser(txtName.Text, txtAdress.Text, txtPhoneNumber.Text);
+                    UpdateGrid();
+                    ClearWindow();
+                }
+            }
         }
 
         private void Btn_Delete(object sender, RoutedEventArgs e)
@@ -123,6 +141,7 @@ namespace WPF_Padawan
         {
             namePopUp.IsOpen = false;
             deletePopUp.IsOpen = false;
+            numericPopUp.IsOpen = false;
         }
     }
 }
