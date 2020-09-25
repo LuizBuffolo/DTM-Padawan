@@ -33,3 +33,4 @@ C:\Projects\WPF Padawan\DTM-Padawan\WPF-Padawan\obj\Debug\WPF-Padawan.csproj.Cor
 C:\Projects\WPF Padawan\DTM-Padawan\WPF-Padawan\obj\Debug\WPF-Padawan.csproj.CopyComplete
 C:\Projects\WPF Padawan\DTM-Padawan\WPF-Padawan\obj\Debug\WPF-Padawan.exe
 C:\Projects\WPF Padawan\DTM-Padawan\WPF-Padawan\obj\Debug\WPF-Padawan.pdb
+C:\Projects\WPF Padawan\DTM-Padawan\WPF-Padawan\obj\Debug\WPF-Padawan.csprojAssemblyReference.cache
