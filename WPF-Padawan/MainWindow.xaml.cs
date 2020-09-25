@@ -108,13 +108,21 @@ namespace WPF_Padawan
 
         private void Btn_Delete(object sender, RoutedEventArgs e)
         {
+            deletePopUp.IsOpen = true;
+        }
+
+        private void Btn_yesDeletePopUp(object sender, RoutedEventArgs e)
+        {
             DataBase.DataBase.DeleteUser(txtName.Text);
+            deletePopUp.IsOpen = false;
+            ClearWindow();
             UpdateGrid();
         }
 
-        private void Btn_OkPopUp(object sender, RoutedEventArgs e)
+        private void Btn_ClosePopUp(object sender, RoutedEventArgs e)
         {
             namePopUp.IsOpen = false;
+            deletePopUp.IsOpen = false;
         }
     }
 }
